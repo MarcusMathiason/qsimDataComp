@@ -19,6 +19,7 @@
 #include <limits>
 #include <string>
 
+
 #include "../lib/circuit_qsim_parser.h"
 #include "../lib/formux.h"
 #include "../lib/fuser_mqubit.h"
@@ -27,6 +28,12 @@
 #include "../lib/run_qsim.h"
 #include "../lib/simmux.h"
 #include "../lib/util_cpu.h"
+#include "../lib/zfp-develop/include/zfp.h"
+#include "../lib/zfp-develop/include/bitstream.h"
+#include "../lib/zfp-develop/include/zfp/macros.h"
+#include "../lib/zfp-develop/include/zfp/system.h"
+#include "../lib/zfp-develop/include/zfp/types.h"
+#include "../lib/zfp-develop/include/zfp/version.h"
 
 constexpr char usage[] = "usage:\n  ./qsim_base -c circuit -d maxtime "
                          "-s seed -t threads -f max_fused_size "
@@ -110,6 +117,12 @@ int main(int argc, char* argv[]) {
   using namespace qsim;
 
   auto opt = GetOptions(argc, argv);
+  //In IDE run path
+  //opt.circuit_file = "C:/Users/marcus/Documents/Chalmers/Thesis/thesis/build/qsim_circuit_20_50_0.txt";
+  //In terminal run path
+  opt.circuit_file = "../../../thesis/build/qsim_circuit_16_25_0.txt";
+  //Valgrind run path
+  //opt.circuit_file = "../../../../thesis/build/qsim_circuit_20_25_0.txt";
   if (!ValidateOptions(opt)) {
     return 1;
   }

@@ -22,6 +22,24 @@
 
 #include "simulator.h"
 #include "statespace_basic.h"
+#include "zfp-develop/include/zfp.h"
+#include "zfp-develop/cfp/include/cfparray.h"
+#include "zfp-develop/cfp/include/cfparray1d.h"
+#include "zfp-develop/cfp/include/cfparray1f.h"
+#include "zfp-develop/cfp/include/cfparray2d.h"
+#include "zfp-develop/cfp/include/cfparray2f.h"
+#include "zfp-develop/cfp/include/cfparray3d.h"
+#include "zfp-develop/cfp/include/cfparray3f.h"
+#include "zfp-develop/cfp/include/cfparray4d.h"
+#include "zfp-develop/cfp/include/cfparray4f.h"
+#include "zfp-develop/cfp/include/cfpheader.h"
+
+#include <algorithm>
+#include <cstdlib>
+#include <iostream>
+#include "zfp-develop/array/zfparray1.h"
+#include "zfp-develop/array/zfparray2.h"
+#include "zfp-develop/array/zfparray3.h"
 
 namespace qsim {
 
@@ -164,9 +182,12 @@ class SimulatorBasic final : public SimulatorBase {
     auto f = [](unsigned n, unsigned m, uint64_t i, const fp_type* v,
                 const uint64_t* ms, const uint64_t* xss, fp_type* rstate) {
       constexpr unsigned hsize = 1 << H;
-
       fp_type rn, in;
-      fp_type rs[hsize], is[hsize];
+      //fp_type rs[hsize], is[hsize];
+
+      //zfp::array1<fp_type> rn, in;
+      zfp::array1<fp_type> rs(hsize, 0.0);
+      zfp::array1<fp_type> is(hsize, 0.0);
 
       uint64_t ii = i & ms[0];
       for (unsigned j = 1; j <= H; ++j) {

@@ -1,0 +1,758 @@
+desc: --massif-out-file=20_25_compressed
+cmd: ../qsim_base
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=2241079
+mem_heap_B=72704
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=2498170
+mem_heap_B=205002
+mem_heap_extra_B=446
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=2623227
+mem_heap_B=205930
+mem_heap_extra_B=766
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=2814741
+mem_heap_B=207478
+mem_heap_extra_B=1234
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=2953901
+mem_heap_B=208646
+mem_heap_extra_B=1570
+mem_stacks_B=0
+heap_tree=detailed
+n5: 208646 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 122880 0x12088F: __gnu_cxx::new_allocator<qsim::Gate<float, qsim::GateKind> >::allocate(unsigned long, void const*) (new_allocator.h:114)
+  n1: 122880 0x1190BB: std::allocator_traits<std::allocator<qsim::Gate<float, qsim::GateKind> > >::allocate(std::allocator<qsim::Gate<float, qsim::GateKind> >&, unsigned long) (alloc_traits.h:444)
+   n1: 122880 0x112081: std::_Vector_base<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > >::_M_allocate(unsigned long) (stl_vector.h:343)
+    n1: 122880 0x10EECE: std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > >::reserve(unsigned long) (vector.tcc:78)
+     n1: 122880 0x10D734: bool qsim::CircuitQsimParser<qsim::IOFile>::FromStream<std::basic_ifstream<char, std::char_traits<char> >, float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_ifstream<char, std::char_traits<char> >&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:55)
+      n1: 122880 0x10C5BD: bool qsim::CircuitQsimParser<qsim::IOFile>::FromFile<float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:159)
+       n0: 122880 0x10AA58: main (qsim_base.cc:124)
+ n1: 72704 0x48F6A99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x4011B89: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x4011C90: call_init (dl-init.c:30)
+    n1: 72704 0x4011C90: _dl_init (dl-init.c:119)
+     n0: 72704 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+ n1: 8192 0x495BD03: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 8192 0x495FF66: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+   n1: 8192 0x4960026: std::basic_ifstream<char, std::char_traits<char> >::open(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+    n1: 8192 0x10B70B: qsim::IOFile::StreamFromFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (io_file.h:32)
+     n1: 8192 0x10C57B: bool qsim::CircuitQsimParser<qsim::IOFile>::FromFile<float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:154)
+      n0: 8192 0x10AA58: main (qsim_base.cc:124)
+ n1: 3808 0x136A13: __gnu_cxx::new_allocator<float>::allocate(unsigned long, void const*) (new_allocator.h:114)
+  n1: 3808 0x132AD1: std::allocator_traits<std::allocator<float> >::allocate(std::allocator<float>&, unsigned long) (alloc_traits.h:444)
+   n1: 3808 0x12B9BD: std::_Vector_base<float, std::allocator<float> >::_M_allocate(unsigned long) (stl_vector.h:343)
+    n1: 3808 0x120D56: void std::vector<float, std::allocator<float> >::_M_range_initialize<float const*>(float const*, float const*, std::forward_iterator_tag) (stl_vector.h:1579)
+     n2: 3808 0x119551: std::vector<float, std::allocator<float> >::vector(std::initializer_list<float>, std::allocator<float> const&) (stl_vector.h:626)
+      n1: 2688 0x1153B0: qsim::GateCZ<float>::Create(unsigned int, unsigned int, unsigned int) (gates_qsim.h:382)
+       n1: 2688 0x11004B: bool qsim::CircuitQsimParser<qsim::IOFile>::ParseGate<float, std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >, qsim::Gate<float, qsim::GateKind> >(std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >&, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > >&) (circuit_qsim_parser.h:327)
+        n1: 2688 0x10DA2A: bool qsim::CircuitQsimParser<qsim::IOFile>::FromStream<std::basic_ifstream<char, std::char_traits<char> >, float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_ifstream<char, std::char_traits<char> >&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:108)
+         n1: 2688 0x10C5BD: bool qsim::CircuitQsimParser<qsim::IOFile>::FromFile<float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:159)
+          n0: 2688 0x10AA58: main (qsim_base.cc:124)
+      n0: 1120 in 2 places, all below massif's threshold (1.00%)
+ n0: 1062 in 4 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=6
+#-----------
+time=3146963
+mem_heap_B=210194
+mem_heap_extra_B=2038
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=3264536
+mem_heap_B=210994
+mem_heap_extra_B=2326
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=3427805
+mem_heap_B=212334
+mem_heap_extra_B=2714
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=3557139
+mem_heap_B=213366
+mem_heap_extra_B=3026
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=3726912
+mem_heap_B=214642
+mem_heap_extra_B=3446
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=3868486
+mem_heap_B=215810
+mem_heap_extra_B=3782
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=4020477
+mem_heap_B=217014
+mem_heap_extra_B=4146
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=4216067
+mem_heap_B=218558
+mem_heap_extra_B=4618
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=4464513
+mem_heap_B=220490
+mem_heap_extra_B=5214
+mem_stacks_B=0
+heap_tree=detailed
+n5: 220490 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 122880 0x12088F: __gnu_cxx::new_allocator<qsim::Gate<float, qsim::GateKind> >::allocate(unsigned long, void const*) (new_allocator.h:114)
+  n1: 122880 0x1190BB: std::allocator_traits<std::allocator<qsim::Gate<float, qsim::GateKind> > >::allocate(std::allocator<qsim::Gate<float, qsim::GateKind> >&, unsigned long) (alloc_traits.h:444)
+   n1: 122880 0x112081: std::_Vector_base<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > >::_M_allocate(unsigned long) (stl_vector.h:343)
+    n1: 122880 0x10EECE: std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > >::reserve(unsigned long) (vector.tcc:78)
+     n1: 122880 0x10D734: bool qsim::CircuitQsimParser<qsim::IOFile>::FromStream<std::basic_ifstream<char, std::char_traits<char> >, float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_ifstream<char, std::char_traits<char> >&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:55)
+      n1: 122880 0x10C5BD: bool qsim::CircuitQsimParser<qsim::IOFile>::FromFile<float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:159)
+       n0: 122880 0x10AA58: main (qsim_base.cc:124)
+ n1: 72704 0x48F6A99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x4011B89: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x4011C90: call_init (dl-init.c:30)
+    n1: 72704 0x4011C90: _dl_init (dl-init.c:119)
+     n0: 72704 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+ n1: 14816 0x136A13: __gnu_cxx::new_allocator<float>::allocate(unsigned long, void const*) (new_allocator.h:114)
+  n1: 14816 0x132AD1: std::allocator_traits<std::allocator<float> >::allocate(std::allocator<float>&, unsigned long) (alloc_traits.h:444)
+   n1: 14816 0x12B9BD: std::_Vector_base<float, std::allocator<float> >::_M_allocate(unsigned long) (stl_vector.h:343)
+    n1: 14816 0x120D56: void std::vector<float, std::allocator<float> >::_M_range_initialize<float const*>(float const*, float const*, std::forward_iterator_tag) (stl_vector.h:1579)
+     n2: 14816 0x119551: std::vector<float, std::allocator<float> >::vector(std::initializer_list<float>, std::allocator<float> const&) (stl_vector.h:626)
+      n1: 11392 0x1153B0: qsim::GateCZ<float>::Create(unsigned int, unsigned int, unsigned int) (gates_qsim.h:382)
+       n1: 11392 0x11004B: bool qsim::CircuitQsimParser<qsim::IOFile>::ParseGate<float, std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >, qsim::Gate<float, qsim::GateKind> >(std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >&, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > >&) (circuit_qsim_parser.h:327)
+        n1: 11392 0x10DA2A: bool qsim::CircuitQsimParser<qsim::IOFile>::FromStream<std::basic_ifstream<char, std::char_traits<char> >, float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_ifstream<char, std::char_traits<char> >&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:108)
+         n1: 11392 0x10C5BD: bool qsim::CircuitQsimParser<qsim::IOFile>::FromFile<float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:159)
+          n0: 11392 0x10AA58: main (qsim_base.cc:124)
+      n0: 3424 in 4 places, all below massif's threshold (1.00%)
+ n1: 8192 0x495BD03: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 8192 0x495FF66: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+   n1: 8192 0x4960026: std::basic_ifstream<char, std::char_traits<char> >::open(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+    n1: 8192 0x10B70B: qsim::IOFile::StreamFromFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (io_file.h:32)
+     n1: 8192 0x10C57B: bool qsim::CircuitQsimParser<qsim::IOFile>::FromFile<float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:154)
+      n0: 8192 0x10AA58: main (qsim_base.cc:124)
+ n0: 1898 in 4 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=15
+#-----------
+time=4648394
+mem_heap_B=221902
+mem_heap_extra_B=5658
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=4800634
+mem_heap_B=223106
+mem_heap_extra_B=6022
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=5059403
+mem_heap_B=225166
+mem_heap_extra_B=6650
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=5198940
+mem_heap_B=226238
+mem_heap_extra_B=6986
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=5348915
+mem_heap_B=227342
+mem_heap_extra_B=7354
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=5546018
+mem_heap_B=228986
+mem_heap_extra_B=7822
+mem_stacks_B=0
+heap_tree=detailed
+n5: 228986 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 122880 0x12088F: __gnu_cxx::new_allocator<qsim::Gate<float, qsim::GateKind> >::allocate(unsigned long, void const*) (new_allocator.h:114)
+  n1: 122880 0x1190BB: std::allocator_traits<std::allocator<qsim::Gate<float, qsim::GateKind> > >::allocate(std::allocator<qsim::Gate<float, qsim::GateKind> >&, unsigned long) (alloc_traits.h:444)
+   n1: 122880 0x112081: std::_Vector_base<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > >::_M_allocate(unsigned long) (stl_vector.h:343)
+    n1: 122880 0x10EECE: std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > >::reserve(unsigned long) (vector.tcc:78)
+     n1: 122880 0x10D734: bool qsim::CircuitQsimParser<qsim::IOFile>::FromStream<std::basic_ifstream<char, std::char_traits<char> >, float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_ifstream<char, std::char_traits<char> >&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:55)
+      n1: 122880 0x10C5BD: bool qsim::CircuitQsimParser<qsim::IOFile>::FromFile<float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:159)
+       n0: 122880 0x10AA58: main (qsim_base.cc:124)
+ n1: 72704 0x48F6A99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x4011B89: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x4011C90: call_init (dl-init.c:30)
+    n1: 72704 0x4011C90: _dl_init (dl-init.c:119)
+     n0: 72704 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+ n1: 22720 0x136A13: __gnu_cxx::new_allocator<float>::allocate(unsigned long, void const*) (new_allocator.h:114)
+  n1: 22720 0x132AD1: std::allocator_traits<std::allocator<float> >::allocate(std::allocator<float>&, unsigned long) (alloc_traits.h:444)
+   n1: 22720 0x12B9BD: std::_Vector_base<float, std::allocator<float> >::_M_allocate(unsigned long) (stl_vector.h:343)
+    n1: 22720 0x120D56: void std::vector<float, std::allocator<float> >::_M_range_initialize<float const*>(float const*, float const*, std::forward_iterator_tag) (stl_vector.h:1579)
+     n2: 22720 0x119551: std::vector<float, std::allocator<float> >::vector(std::initializer_list<float>, std::allocator<float> const&) (stl_vector.h:626)
+      n1: 17664 0x1153B0: qsim::GateCZ<float>::Create(unsigned int, unsigned int, unsigned int) (gates_qsim.h:382)
+       n1: 17664 0x11004B: bool qsim::CircuitQsimParser<qsim::IOFile>::ParseGate<float, std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >, qsim::Gate<float, qsim::GateKind> >(std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >&, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > >&) (circuit_qsim_parser.h:327)
+        n1: 17664 0x10DA2A: bool qsim::CircuitQsimParser<qsim::IOFile>::FromStream<std::basic_ifstream<char, std::char_traits<char> >, float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_ifstream<char, std::char_traits<char> >&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:108)
+         n1: 17664 0x10C5BD: bool qsim::CircuitQsimParser<qsim::IOFile>::FromFile<float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:159)
+          n0: 17664 0x10AA58: main (qsim_base.cc:124)
+      n0: 5056 in 4 places, all below massif's threshold (1.00%)
+ n1: 8192 0x495BD03: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 8192 0x495FF66: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+   n1: 8192 0x4960026: std::basic_ifstream<char, std::char_traits<char> >::open(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+    n1: 8192 0x10B70B: qsim::IOFile::StreamFromFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (io_file.h:32)
+     n1: 8192 0x10C57B: bool qsim::CircuitQsimParser<qsim::IOFile>::FromFile<float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:154)
+      n0: 8192 0x10AA58: main (qsim_base.cc:124)
+ n0: 2490 in 4 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=21
+#-----------
+time=5676461
+mem_heap_B=230018
+mem_heap_extra_B=8134
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=5883885
+mem_heap_B=8611178
+mem_heap_extra_B=8582
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=46827719
+mem_heap_B=8639866
+mem_heap_extra_B=8590
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=47013747
+mem_heap_B=8895790
+mem_heap_extra_B=9634
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=47143283
+mem_heap_B=8898078
+mem_heap_extra_B=10466
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=47343561
+mem_heap_B=8901598
+mem_heap_extra_B=11746
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=47573297
+mem_heap_B=8905646
+mem_heap_extra_B=13218
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=47813655
+mem_heap_B=8909870
+mem_heap_extra_B=14754
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=48013331
+mem_heap_B=8913390
+mem_heap_extra_B=16034
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=48123429
+mem_heap_B=8915326
+mem_heap_extra_B=16738
+mem_stacks_B=0
+heap_tree=detailed
+n4: 8915326 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8388608 0x10C6D1: qsim::VectorSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::SequentialFor, float>::Create(unsigned int) (vectorspace.h:96)
+  n0: 8388608 0x10AAAD: main (qsim_base.cc:157)
+ n0: 247358 in 15 places, all below massif's threshold (1.00%)
+ n1: 156480 0x136D3C: __gnu_cxx::new_allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link>::allocate(unsigned long, void const*) (new_allocator.h:114)
+  n1: 156480 0x132F63: std::allocator_traits<std::allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link> >::allocate(std::allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link>&, unsigned long) (alloc_traits.h:444)
+   n1: 156480 0x12C3AD: std::_Vector_base<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link, std::allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link> >::_M_allocate(unsigned long) (stl_vector.h:343)
+    n1: 156480 0x122DC8: std::vector<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link, std::allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link> >::reserve(unsigned long) (vector.tcc:78)
+     n1: 156480 0x11C7F7: qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::LinkManagerT(unsigned long) (fuser_mqubit.h:55)
+      n1: 156480 0x116FAB: qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::FuseGates(qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::Parameter const&, unsigned int, __gnu_cxx::__normal_iterator<qsim::Gate<float, qsim::GateKind> const*, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > > >, __gnu_cxx::__normal_iterator<qsim::Gate<float, qsim::GateKind> const*, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > > >, std::vector<unsigned int, std::allocator<unsigned int> > const&, bool) (fuser_mqubit.h:256)
+       n1: 156480 0x110E22: qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::FuseGates(qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::Parameter const&, unsigned int, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > > const&, bool) (fuser_mqubit.h:173)
+        n1: 156480 0x10ADEC: bool qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Run<qsim::Circuit<qsim::Gate<float, qsim::GateKind> > >(qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Parameter const&, main::Factory const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> > const&, qsim::VectorSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::SequentialFor, float>::Vector&, std::vector<qsim::StateSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::VectorSpace, qsim::SequentialFor, float>::MeasurementResult, std::allocator<qsim::StateSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::VectorSpace, qsim::SequentialFor, float>::MeasurementResult> >&) (run_qsim.h:193)
+         n1: 156480 0x10AC61: bool qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Run<qsim::Circuit<qsim::Gate<float, qsim::GateKind> > >(qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Parameter const&, main::Factory const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> > const&, qsim::VectorSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::SequentialFor, float>::Vector&) (run_qsim.h:252)
+          n0: 156480 0x10AB56: main (qsim_base.cc:171)
+ n1: 122880 0x12088F: __gnu_cxx::new_allocator<qsim::Gate<float, qsim::GateKind> >::allocate(unsigned long, void const*) (new_allocator.h:114)
+  n1: 122880 0x1190BB: std::allocator_traits<std::allocator<qsim::Gate<float, qsim::GateKind> > >::allocate(std::allocator<qsim::Gate<float, qsim::GateKind> >&, unsigned long) (alloc_traits.h:444)
+   n1: 122880 0x112081: std::_Vector_base<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > >::_M_allocate(unsigned long) (stl_vector.h:343)
+    n1: 122880 0x10EECE: std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > >::reserve(unsigned long) (vector.tcc:78)
+     n1: 122880 0x10D734: bool qsim::CircuitQsimParser<qsim::IOFile>::FromStream<std::basic_ifstream<char, std::char_traits<char> >, float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_ifstream<char, std::char_traits<char> >&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:55)
+      n1: 122880 0x10C5BD: bool qsim::CircuitQsimParser<qsim::IOFile>::FromFile<float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:159)
+       n0: 122880 0x10AA58: main (qsim_base.cc:124)
+#-----------
+snapshot=31
+#-----------
+time=48313085
+mem_heap_B=8918670
+mem_heap_extra_B=17954
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=48511726
+mem_heap_B=8922174
+mem_heap_extra_B=19202
+mem_stacks_B=0
+heap_tree=peak
+n4: 8922174 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8388608 0x10C6D1: qsim::VectorSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::SequentialFor, float>::Create(unsigned int) (vectorspace.h:96)
+  n0: 8388608 0x10AAAD: main (qsim_base.cc:157)
+ n0: 254206 in 15 places, all below massif's threshold (1.00%)
+ n1: 156480 0x136D3C: __gnu_cxx::new_allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link>::allocate(unsigned long, void const*) (new_allocator.h:114)
+  n1: 156480 0x132F63: std::allocator_traits<std::allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link> >::allocate(std::allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link>&, unsigned long) (alloc_traits.h:444)
+   n1: 156480 0x12C3AD: std::_Vector_base<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link, std::allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link> >::_M_allocate(unsigned long) (stl_vector.h:343)
+    n1: 156480 0x122DC8: std::vector<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link, std::allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link> >::reserve(unsigned long) (vector.tcc:78)
+     n1: 156480 0x11C7F7: qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::LinkManagerT(unsigned long) (fuser_mqubit.h:55)
+      n1: 156480 0x116FAB: qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::FuseGates(qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::Parameter const&, unsigned int, __gnu_cxx::__normal_iterator<qsim::Gate<float, qsim::GateKind> const*, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > > >, __gnu_cxx::__normal_iterator<qsim::Gate<float, qsim::GateKind> const*, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > > >, std::vector<unsigned int, std::allocator<unsigned int> > const&, bool) (fuser_mqubit.h:256)
+       n1: 156480 0x110E22: qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::FuseGates(qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::Parameter const&, unsigned int, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > > const&, bool) (fuser_mqubit.h:173)
+        n1: 156480 0x10ADEC: bool qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Run<qsim::Circuit<qsim::Gate<float, qsim::GateKind> > >(qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Parameter const&, main::Factory const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> > const&, qsim::VectorSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::SequentialFor, float>::Vector&, std::vector<qsim::StateSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::VectorSpace, qsim::SequentialFor, float>::MeasurementResult, std::allocator<qsim::StateSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::VectorSpace, qsim::SequentialFor, float>::MeasurementResult> >&) (run_qsim.h:193)
+         n1: 156480 0x10AC61: bool qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Run<qsim::Circuit<qsim::Gate<float, qsim::GateKind> > >(qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Parameter const&, main::Factory const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> > const&, qsim::VectorSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::SequentialFor, float>::Vector&) (run_qsim.h:252)
+          n0: 156480 0x10AB56: main (qsim_base.cc:171)
+ n1: 122880 0x12088F: __gnu_cxx::new_allocator<qsim::Gate<float, qsim::GateKind> >::allocate(unsigned long, void const*) (new_allocator.h:114)
+  n1: 122880 0x1190BB: std::allocator_traits<std::allocator<qsim::Gate<float, qsim::GateKind> > >::allocate(std::allocator<qsim::Gate<float, qsim::GateKind> >&, unsigned long) (alloc_traits.h:444)
+   n1: 122880 0x112081: std::_Vector_base<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > >::_M_allocate(unsigned long) (stl_vector.h:343)
+    n1: 122880 0x10EECE: std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > >::reserve(unsigned long) (vector.tcc:78)
+     n1: 122880 0x10D734: bool qsim::CircuitQsimParser<qsim::IOFile>::FromStream<std::basic_ifstream<char, std::char_traits<char> >, float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_ifstream<char, std::char_traits<char> >&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:55)
+      n1: 122880 0x10C5BD: bool qsim::CircuitQsimParser<qsim::IOFile>::FromFile<float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:159)
+       n0: 122880 0x10AA58: main (qsim_base.cc:124)
+#-----------
+snapshot=33
+#-----------
+time=48706810
+mem_heap_B=8922094
+mem_heap_extra_B=19186
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=48838668
+mem_heap_B=8922158
+mem_heap_extra_B=19194
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=49100259
+mem_heap_B=8922094
+mem_heap_extra_B=19186
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=49232554
+mem_heap_B=8922094
+mem_heap_extra_B=19186
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=49431858
+mem_heap_B=8922094
+mem_heap_extra_B=19186
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=49628386
+mem_heap_B=8922158
+mem_heap_extra_B=19194
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=49898561
+mem_heap_B=8922094
+mem_heap_extra_B=19186
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=50171911
+mem_heap_B=8922990
+mem_heap_extra_B=19242
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=50313838
+mem_heap_B=8923630
+mem_heap_extra_B=19282
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=50514618
+mem_heap_B=8924654
+mem_heap_extra_B=19346
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=50709702
+mem_heap_B=8925806
+mem_heap_extra_B=19418
+mem_stacks_B=0
+heap_tree=detailed
+n4: 8925806 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8388608 0x10C6D1: qsim::VectorSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::SequentialFor, float>::Create(unsigned int) (vectorspace.h:96)
+  n0: 8388608 0x10AAAD: main (qsim_base.cc:157)
+ n0: 257838 in 15 places, all below massif's threshold (1.00%)
+ n1: 156480 0x136D3C: __gnu_cxx::new_allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link>::allocate(unsigned long, void const*) (new_allocator.h:114)
+  n1: 156480 0x132F63: std::allocator_traits<std::allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link> >::allocate(std::allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link>&, unsigned long) (alloc_traits.h:444)
+   n1: 156480 0x12C3AD: std::_Vector_base<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link, std::allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link> >::_M_allocate(unsigned long) (stl_vector.h:343)
+    n1: 156480 0x122DC8: std::vector<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link, std::allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link> >::reserve(unsigned long) (vector.tcc:78)
+     n1: 156480 0x11C7F7: qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::LinkManagerT(unsigned long) (fuser_mqubit.h:55)
+      n1: 156480 0x116FAB: qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::FuseGates(qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::Parameter const&, unsigned int, __gnu_cxx::__normal_iterator<qsim::Gate<float, qsim::GateKind> const*, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > > >, __gnu_cxx::__normal_iterator<qsim::Gate<float, qsim::GateKind> const*, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > > >, std::vector<unsigned int, std::allocator<unsigned int> > const&, bool) (fuser_mqubit.h:256)
+       n1: 156480 0x110E22: qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::FuseGates(qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::Parameter const&, unsigned int, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > > const&, bool) (fuser_mqubit.h:173)
+        n1: 156480 0x10ADEC: bool qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Run<qsim::Circuit<qsim::Gate<float, qsim::GateKind> > >(qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Parameter const&, main::Factory const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> > const&, qsim::VectorSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::SequentialFor, float>::Vector&, std::vector<qsim::StateSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::VectorSpace, qsim::SequentialFor, float>::MeasurementResult, std::allocator<qsim::StateSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::VectorSpace, qsim::SequentialFor, float>::MeasurementResult> >&) (run_qsim.h:193)
+         n1: 156480 0x10AC61: bool qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Run<qsim::Circuit<qsim::Gate<float, qsim::GateKind> > >(qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Parameter const&, main::Factory const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> > const&, qsim::VectorSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::SequentialFor, float>::Vector&) (run_qsim.h:252)
+          n0: 156480 0x10AB56: main (qsim_base.cc:171)
+ n1: 122880 0x12088F: __gnu_cxx::new_allocator<qsim::Gate<float, qsim::GateKind> >::allocate(unsigned long, void const*) (new_allocator.h:114)
+  n1: 122880 0x1190BB: std::allocator_traits<std::allocator<qsim::Gate<float, qsim::GateKind> > >::allocate(std::allocator<qsim::Gate<float, qsim::GateKind> >&, unsigned long) (alloc_traits.h:444)
+   n1: 122880 0x112081: std::_Vector_base<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > >::_M_allocate(unsigned long) (stl_vector.h:343)
+    n1: 122880 0x10EECE: std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > >::reserve(unsigned long) (vector.tcc:78)
+     n1: 122880 0x10D734: bool qsim::CircuitQsimParser<qsim::IOFile>::FromStream<std::basic_ifstream<char, std::char_traits<char> >, float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_ifstream<char, std::char_traits<char> >&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:55)
+      n1: 122880 0x10C5BD: bool qsim::CircuitQsimParser<qsim::IOFile>::FromFile<float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:159)
+       n0: 122880 0x10AA58: main (qsim_base.cc:124)
+#-----------
+snapshot=44
+#-----------
+time=50969754
+mem_heap_B=8927342
+mem_heap_extra_B=19514
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=51108492
+mem_heap_B=8928110
+mem_heap_extra_B=19562
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=51368544
+mem_heap_B=8929646
+mem_heap_extra_B=19658
+mem_stacks_B=0
+heap_tree=detailed
+n4: 8929646 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8388608 0x10C6D1: qsim::VectorSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::SequentialFor, float>::Create(unsigned int) (vectorspace.h:96)
+  n0: 8388608 0x10AAAD: main (qsim_base.cc:157)
+ n0: 261678 in 15 places, all below massif's threshold (1.00%)
+ n1: 156480 0x136D3C: __gnu_cxx::new_allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link>::allocate(unsigned long, void const*) (new_allocator.h:114)
+  n1: 156480 0x132F63: std::allocator_traits<std::allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link> >::allocate(std::allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link>&, unsigned long) (alloc_traits.h:444)
+   n1: 156480 0x12C3AD: std::_Vector_base<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link, std::allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link> >::_M_allocate(unsigned long) (stl_vector.h:343)
+    n1: 156480 0x122DC8: std::vector<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link, std::allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link> >::reserve(unsigned long) (vector.tcc:78)
+     n1: 156480 0x11C7F7: qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::LinkManagerT(unsigned long) (fuser_mqubit.h:55)
+      n1: 156480 0x116FAB: qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::FuseGates(qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::Parameter const&, unsigned int, __gnu_cxx::__normal_iterator<qsim::Gate<float, qsim::GateKind> const*, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > > >, __gnu_cxx::__normal_iterator<qsim::Gate<float, qsim::GateKind> const*, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > > >, std::vector<unsigned int, std::allocator<unsigned int> > const&, bool) (fuser_mqubit.h:256)
+       n1: 156480 0x110E22: qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::FuseGates(qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::Parameter const&, unsigned int, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > > const&, bool) (fuser_mqubit.h:173)
+        n1: 156480 0x10ADEC: bool qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Run<qsim::Circuit<qsim::Gate<float, qsim::GateKind> > >(qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Parameter const&, main::Factory const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> > const&, qsim::VectorSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::SequentialFor, float>::Vector&, std::vector<qsim::StateSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::VectorSpace, qsim::SequentialFor, float>::MeasurementResult, std::allocator<qsim::StateSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::VectorSpace, qsim::SequentialFor, float>::MeasurementResult> >&) (run_qsim.h:193)
+         n1: 156480 0x10AC61: bool qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Run<qsim::Circuit<qsim::Gate<float, qsim::GateKind> > >(qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Parameter const&, main::Factory const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> > const&, qsim::VectorSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::SequentialFor, float>::Vector&) (run_qsim.h:252)
+          n0: 156480 0x10AB56: main (qsim_base.cc:171)
+ n1: 122880 0x12088F: __gnu_cxx::new_allocator<qsim::Gate<float, qsim::GateKind> >::allocate(unsigned long, void const*) (new_allocator.h:114)
+  n1: 122880 0x1190BB: std::allocator_traits<std::allocator<qsim::Gate<float, qsim::GateKind> > >::allocate(std::allocator<qsim::Gate<float, qsim::GateKind> >&, unsigned long) (alloc_traits.h:444)
+   n1: 122880 0x112081: std::_Vector_base<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > >::_M_allocate(unsigned long) (stl_vector.h:343)
+    n1: 122880 0x10EECE: std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > >::reserve(unsigned long) (vector.tcc:78)
+     n1: 122880 0x10D734: bool qsim::CircuitQsimParser<qsim::IOFile>::FromStream<std::basic_ifstream<char, std::char_traits<char> >, float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_ifstream<char, std::char_traits<char> >&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:55)
+      n1: 122880 0x10C5BD: bool qsim::CircuitQsimParser<qsim::IOFile>::FromFile<float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:159)
+       n0: 122880 0x10AA58: main (qsim_base.cc:124)
+#-----------
+snapshot=47
+#-----------
+time=51507282
+mem_heap_B=8930414
+mem_heap_extra_B=19706
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=51767334
+mem_heap_B=8931950
+mem_heap_extra_B=19802
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=52036098
+mem_heap_B=8933486
+mem_heap_extra_B=19898
+mem_stacks_B=0
+heap_tree=detailed
+n4: 8933486 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8388608 0x10C6D1: qsim::VectorSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::SequentialFor, float>::Create(unsigned int) (vectorspace.h:96)
+  n0: 8388608 0x10AAAD: main (qsim_base.cc:157)
+ n0: 265518 in 15 places, all below massif's threshold (1.00%)
+ n1: 156480 0x136D3C: __gnu_cxx::new_allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link>::allocate(unsigned long, void const*) (new_allocator.h:114)
+  n1: 156480 0x132F63: std::allocator_traits<std::allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link> >::allocate(std::allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link>&, unsigned long) (alloc_traits.h:444)
+   n1: 156480 0x12C3AD: std::_Vector_base<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link, std::allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link> >::_M_allocate(unsigned long) (stl_vector.h:343)
+    n1: 156480 0x122DC8: std::vector<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link, std::allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link> >::reserve(unsigned long) (vector.tcc:78)
+     n1: 156480 0x11C7F7: qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::LinkManagerT(unsigned long) (fuser_mqubit.h:55)
+      n1: 156480 0x116FAB: qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::FuseGates(qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::Parameter const&, unsigned int, __gnu_cxx::__normal_iterator<qsim::Gate<float, qsim::GateKind> const*, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > > >, __gnu_cxx::__normal_iterator<qsim::Gate<float, qsim::GateKind> const*, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > > >, std::vector<unsigned int, std::allocator<unsigned int> > const&, bool) (fuser_mqubit.h:256)
+       n1: 156480 0x110E22: qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::FuseGates(qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::Parameter const&, unsigned int, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > > const&, bool) (fuser_mqubit.h:173)
+        n1: 156480 0x10ADEC: bool qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Run<qsim::Circuit<qsim::Gate<float, qsim::GateKind> > >(qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Parameter const&, main::Factory const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> > const&, qsim::VectorSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::SequentialFor, float>::Vector&, std::vector<qsim::StateSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::VectorSpace, qsim::SequentialFor, float>::MeasurementResult, std::allocator<qsim::StateSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::VectorSpace, qsim::SequentialFor, float>::MeasurementResult> >&) (run_qsim.h:193)
+         n1: 156480 0x10AC61: bool qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Run<qsim::Circuit<qsim::Gate<float, qsim::GateKind> > >(qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Parameter const&, main::Factory const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> > const&, qsim::VectorSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::SequentialFor, float>::Vector&) (run_qsim.h:252)
+          n0: 156480 0x10AB56: main (qsim_base.cc:171)
+ n1: 122880 0x12088F: __gnu_cxx::new_allocator<qsim::Gate<float, qsim::GateKind> >::allocate(unsigned long, void const*) (new_allocator.h:114)
+  n1: 122880 0x1190BB: std::allocator_traits<std::allocator<qsim::Gate<float, qsim::GateKind> > >::allocate(std::allocator<qsim::Gate<float, qsim::GateKind> >&, unsigned long) (alloc_traits.h:444)
+   n1: 122880 0x112081: std::_Vector_base<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > >::_M_allocate(unsigned long) (stl_vector.h:343)
+    n1: 122880 0x10EECE: std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > >::reserve(unsigned long) (vector.tcc:78)
+     n1: 122880 0x10D734: bool qsim::CircuitQsimParser<qsim::IOFile>::FromStream<std::basic_ifstream<char, std::char_traits<char> >, float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_ifstream<char, std::char_traits<char> >&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:55)
+      n1: 122880 0x10C5BD: bool qsim::CircuitQsimParser<qsim::IOFile>::FromFile<float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:159)
+       n0: 122880 0x10AA58: main (qsim_base.cc:124)
+#-----------
+snapshot=50
+#-----------
+time=52153120
+mem_heap_B=8934126
+mem_heap_extra_B=19938
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=52264916
+mem_heap_B=8935022
+mem_heap_extra_B=19994
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=52378542
+mem_heap_B=8935406
+mem_heap_extra_B=20018
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=52490338
+mem_heap_B=8936302
+mem_heap_extra_B=20074
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=52608256
+mem_heap_B=8936814
+mem_heap_extra_B=20106
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=52725278
+mem_heap_B=8937454
+mem_heap_extra_B=20146
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=52842345
+mem_heap_B=8938094
+mem_heap_extra_B=20186
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=52954141
+mem_heap_B=8938990
+mem_heap_extra_B=20242
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=53072059
+mem_heap_B=8939502
+mem_heap_extra_B=20274
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=53189126
+mem_heap_B=8940142
+mem_heap_extra_B=20314
+mem_stacks_B=0
+heap_tree=detailed
+n4: 8940142 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8388608 0x10C6D1: qsim::VectorSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::SequentialFor, float>::Create(unsigned int) (vectorspace.h:96)
+  n0: 8388608 0x10AAAD: main (qsim_base.cc:157)
+ n0: 272174 in 15 places, all below massif's threshold (1.00%)
+ n1: 156480 0x136D3C: __gnu_cxx::new_allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link>::allocate(unsigned long, void const*) (new_allocator.h:114)
+  n1: 156480 0x132F63: std::allocator_traits<std::allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link> >::allocate(std::allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link>&, unsigned long) (alloc_traits.h:444)
+   n1: 156480 0x12C3AD: std::_Vector_base<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link, std::allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link> >::_M_allocate(unsigned long) (stl_vector.h:343)
+    n1: 156480 0x122DC8: std::vector<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link, std::allocator<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::Link> >::reserve(unsigned long) (vector.tcc:78)
+     n1: 156480 0x11C7F7: qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::LinkManagerT<qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::GateF*>::LinkManagerT(unsigned long) (fuser_mqubit.h:55)
+      n1: 156480 0x116FAB: qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::FuseGates(qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::Parameter const&, unsigned int, __gnu_cxx::__normal_iterator<qsim::Gate<float, qsim::GateKind> const*, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > > >, __gnu_cxx::__normal_iterator<qsim::Gate<float, qsim::GateKind> const*, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > > >, std::vector<unsigned int, std::allocator<unsigned int> > const&, bool) (fuser_mqubit.h:256)
+       n1: 156480 0x110E22: qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::FuseGates(qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::Parameter const&, unsigned int, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > > const&, bool) (fuser_mqubit.h:173)
+        n1: 156480 0x10ADEC: bool qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Run<qsim::Circuit<qsim::Gate<float, qsim::GateKind> > >(qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Parameter const&, main::Factory const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> > const&, qsim::VectorSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::SequentialFor, float>::Vector&, std::vector<qsim::StateSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::VectorSpace, qsim::SequentialFor, float>::MeasurementResult, std::allocator<qsim::StateSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::VectorSpace, qsim::SequentialFor, float>::MeasurementResult> >&) (run_qsim.h:193)
+         n1: 156480 0x10AC61: bool qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Run<qsim::Circuit<qsim::Gate<float, qsim::GateKind> > >(qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Parameter const&, main::Factory const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> > const&, qsim::VectorSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::SequentialFor, float>::Vector&) (run_qsim.h:252)
+          n0: 156480 0x10AB56: main (qsim_base.cc:171)
+ n1: 122880 0x12088F: __gnu_cxx::new_allocator<qsim::Gate<float, qsim::GateKind> >::allocate(unsigned long, void const*) (new_allocator.h:114)
+  n1: 122880 0x1190BB: std::allocator_traits<std::allocator<qsim::Gate<float, qsim::GateKind> > >::allocate(std::allocator<qsim::Gate<float, qsim::GateKind> >&, unsigned long) (alloc_traits.h:444)
+   n1: 122880 0x112081: std::_Vector_base<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > >::_M_allocate(unsigned long) (stl_vector.h:343)
+    n1: 122880 0x10EECE: std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > >::reserve(unsigned long) (vector.tcc:78)
+     n1: 122880 0x10D734: bool qsim::CircuitQsimParser<qsim::IOFile>::FromStream<std::basic_ifstream<char, std::char_traits<char> >, float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_ifstream<char, std::char_traits<char> >&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:55)
+      n1: 122880 0x10C5BD: bool qsim::CircuitQsimParser<qsim::IOFile>::FromFile<float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (circuit_qsim_parser.h:159)
+       n0: 122880 0x10AA58: main (qsim_base.cc:124)
+#-----------
+snapshot=60
+#-----------
+time=53306148
+mem_heap_B=8940782
+mem_heap_extra_B=20354
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=53416352
+mem_heap_B=8874226
+mem_heap_extra_B=19198
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=53526619
+mem_heap_B=8864106
+mem_heap_extra_B=15326
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=40457417438
+mem_heap_B=8677434
+mem_heap_extra_B=13454
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=40457594799
+mem_heap_B=223082
+mem_heap_extra_B=8566
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=40457705108
+mem_heap_B=210474
+mem_heap_extra_B=4494
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=40457815631
+mem_heap_B=197386
+mem_heap_extra_B=438
+mem_stacks_B=0
+heap_tree=empty

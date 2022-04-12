@@ -335,6 +335,9 @@ class SimulatorAVX final : public SimulatorBase {
       __m256 ru, iu, rn, in;
       __m256 rs[hsize], is[hsize];
 
+      //zfp::array1<float> rs[hsize], is[hsize];
+      //zfp::array1<float> ru, iu, rn in;
+
       auto p0 = rstate + _pdep_u64(i, imaskh);
 
       for (unsigned k = 0; k < hsize; ++k) {
@@ -347,10 +350,18 @@ class SimulatorAVX final : public SimulatorBase {
       uint64_t j = 0;
 
       for (unsigned k = 0; k < hsize; ++k) {
+        //Init 256 bit vector with scalar single-precision fp values
         ru = _mm256_set1_ps(v[j]);
         iu = _mm256_set1_ps(v[j + 1]);
+
+        //zfp_field ruField = zfp_field_1d(&ru[0], float, v);
+        //zfp_field iuField = zfp_field_1d(&iu[0], float, v);
+
+        //Multiply float32 vectors
         rn = _mm256_mul_ps(rs[0], ru);
         in = _mm256_mul_ps(rs[0], iu);
+
+        //Multiply-adds negated packed single-precision fp values 
         rn = _mm256_fnmadd_ps(is[0], iu, rn);
         in = _mm256_fmadd_ps(is[0], ru, in);
 
