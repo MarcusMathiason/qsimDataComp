@@ -19,6 +19,8 @@
 #include <cstdint>
 #include <functional>
 #include <vector>
+#include <iostream>
+#include <fstream>
 
 #include "simulator.h"
 #include "statespace_basic.h"
@@ -318,7 +320,7 @@ class SimulatorBasic final : public SimulatorBase {
     bitstream* stream; /* bit stream to write to or read from */
     size_t zfpsize;    /* byte size of compressed stream */
 
-    /* allocate meta data for the 3D array a[nz][ny][nx] */
+    /* allocate meta data for the 1D array a[nx]*/
     type = zfp_type_float;
     field = zfp_field_1d(arr, type, nx);
 
@@ -326,9 +328,9 @@ class SimulatorBasic final : public SimulatorBase {
     zfp = zfp_stream_open(NULL);
 
     /* set compression mode and parameters via one of four functions */
-  /*  zfp_stream_set_reversible(zfp); */
-  /*  zfp_stream_set_rate(zfp, rate, type, zfp_field_dimensionality(field), zfp_false); */
-  /*  zfp_stream_set_precision(zfp, precision); */
+    /*  zfp_stream_set_reversible(zfp); */
+    /*zfp_stream_set_rate(zfp, 12, type, zfp_field_dimensionality(field), zfp_false);*/
+    /*  zfp_stream_set_precision(zfp, precision); */
     zfp_stream_set_accuracy(zfp, 1e-3);
 
     /* allocate buffer for compressed data */
@@ -342,45 +344,49 @@ class SimulatorBasic final : public SimulatorBase {
 
     /* compress or decompress entire array */
     if (decompress) {
-      printf("Decompressing...\n");
+      size_t wHeaderSize = zfp_read_header(zfp, field, ZFP_HEADER_FULL);
+
       /* read compressed stream and decompress and output array */
-      //zfpsize = fread(buffer, 1, bufsize, stdin);
+      zfpsize = fread(buffer, 1, bufsize, fopen("compStream.bin", "r"));
+
       if (!zfp_decompress(zfp, field)) {
         fprintf(stderr, "decompression failed\n");
         status = EXIT_FAILURE;
       }
-      else
-        fwrite(arr, sizeof(double), zfp_field_size(field, NULL), stdout);
+      else{
+        fwrite(arr, sizeof(double), zfp_field_size(field, NULL), fopen("compStream.bin", "w"));
+      }
     }
     else {
-      printf("Compressing...\n");
+      size_t wHeaderSize = zfp_write_header(zfp, field, ZFP_HEADER_FULL);
+
       /* compress array and output compressed stream */
       zfpsize = zfp_compress(zfp, field);
+      
       if (!zfpsize) {
         fprintf(stderr, "compression failed\n");
         status = EXIT_FAILURE;
       }
-      else{
-        //fwrite(buffer, 1, zfpsize, stdout);
-      }
+      else
+        fwrite(buffer, 1, zfpsize, fopen("compStream.bin", "w"));
     }
 
     /* clean up */
     zfp_field_free(field);
     zfp_stream_close(zfp);
     stream_close(stream);
-    //free(buffer);
+    free(buffer);
     //free(arr);
   }
 
   static float* populateVector(State& state){
-    std::vector<float> tmp;
     float* arr = new float[(int)(2*pow(2.0,state.num_qubits()))];
-    for(int i = 0; i < 2*pow(2.0,state.num_qubits()); i++){
+    memcpy(arr, state.get(), (2*pow(2.0,state.num_qubits())));
+    /*for(int i = 0; i < 2*pow(2.0,state.num_qubits()); i++){
       //printf("Giving statevector value %f to vector\n", *(state.get()+i));
       //tmp.push_back(*(state.get()+i));
       arr[i] = *(state.get()+i);
-    }
+    }*/
     return arr;
   }
 
@@ -546,17 +552,17 @@ class SimulatorBasic final : public SimulatorBase {
         }
         ptr += xss[i];
       }*/
-      uint64_t i;
+      /*uint64_t i;
       uint64_t ii = i & ms[0];
       for (unsigned j = 1; j <= H; ++j) {
         i *= 2;
         ii |= i & ms[j];
       }
 
-      float* p0 = state.get() + 2 * ii;
+      float* p0 = state.get() + 2 * ii;*/
 
       //zfp::array2<double> states(2, 1<<H, 0.0);
-      double states[(int)(2*pow(2.0, state.num_qubits()))];
+      //double states[(int)(2*pow(2.0, state.num_qubits()))];
 
       
       
@@ -697,17 +703,30 @@ class SimulatorBasic final : public SimulatorBase {
     //printf("\n");
 
     //printf("Populating vector...\n");
-    float* arr = populateVector(state);
-    /*printf("Printing arr values...\n");
-    for(int c = 0; c < (2*pow(2.0,state.num_qubits())); c++){
-      printf("%f", arr[c]);
-    }
+    /*if(test_counter==0){
+      float* arr = populateVector(state);
+      printf("\n");
+      printf("Printing original arr values...\n");
+      for(int c = 0; c < (2*pow(2.0,state.num_qubits())); c++){
+        printf("%f", arr[c]);
+      }
+      compressArr(arr, (2*pow(2.0,state.num_qubits())), false);
+      //compressArr(arr, (2*pow(2.0,state.num_qubits())), true);
+      printf("\n");
+      printf("Printing compressed arr values...\n");
+      for(int c = 0; c < (2*pow(2.0,state.num_qubits())); c++){
+        printf("%f", arr[c]);
+      }
+    }*/
+    
+    /*
     printf("\n");
     printf("Array initial size: %d", sizeof(arr));
-
     printf("\n");
     printf("Compressing array...\n");*/
-    compressArr(arr, (2*pow(2.0,state.num_qubits())), false);
+    //printf("Arr size: %d\n", sizeof(arr));
+    //compressArr(arr, (2*pow(2.0,state.num_qubits())), false);
+    //printf("Arr size after compression: %d\n", sizeof(arr));
     /*printf("Printing compressed arr values...\n");
     for(int c = 0; c < (2*pow(2.0,state.num_qubits())); c++){
       printf("%f", arr[c]);
@@ -715,7 +734,8 @@ class SimulatorBasic final : public SimulatorBase {
     printf("\n");
     printf("Compressed array size: %d", sizeof(arr));
     printf("\n");*/
-    compressArr(arr, (2*pow(2.0,state.num_qubits())), true);
+    //compressArr(arr, (2*pow(2.0,state.num_qubits())), true);
+    //printf("Arr size after decompression: %d\n", sizeof(arr));
     /*printf("Printing decompressed arr values...\n");
     for(int c = 0; c < (2*pow(2.0,state.num_qubits())); c++){
       printf("%f", arr[c]);
@@ -742,10 +762,61 @@ class SimulatorBasic final : public SimulatorBase {
 
     //decode(buf, state, 1);
     //printf("Decompression success! Running...\n");
-    printf("Running...\n");
+    //printf("Running...\n");
+    printf("Test counter: %d\n", test_counter);
+    std::ofstream myfile;
+    
+    if(test_counter == 0){
+      myfile.open("svDump.csv");
+      myfile <<"test_counter == 0";
+      for(int c = 0; c < (2*pow(2.0,state.num_qubits())); c++){
+        //printf("%f\n", *(state.get()+c));
+        if((c%10000)==0){
+          myfile << std::endl;
+        }
+        myfile <<*(state.get()+c) << ";";
+        
+      }
+      myfile << std::endl;
+      myfile << std::endl;
+    }
+    else if(test_counter == 10){
+      myfile.open("svDump.csv", std::ofstream::app);
+      myfile <<"test_counter == 10";
+      for(int c = 0; c < (2*pow(2.0,state.num_qubits())); c++){
+        //printf("%f\n", *(state.get()+c));
+        if((c%10000)==0){
+          myfile << std::endl;
+        }
+        myfile <<*(state.get()+c) << ";";
+        
+      }
+      myfile << std::endl;
+      myfile << std::endl;
+    }
+    else if(test_counter == 100){
+      myfile.open("svDump.csv", std::ofstream::app);
+      myfile <<"test_counter == 100";
+      for(int c = 0; c < (2*pow(2.0,state.num_qubits())); c++){
+        //printf("%f\n", *(state.get()+c));
+        if((c%10000)==0){
+          myfile << std::endl;
+        }
+        myfile <<*(state.get()+c) << ";";
+        
+      }
+      myfile << std::endl;
+      myfile << std::endl;
+    }
+
+    if(test_counter>100){
+      myfile.close();
+    }
+    
+
     for_.Run(size, f, matrix, ms, xss, state.get());
 
-    compressArr(arr, (2*pow(2.0,state.num_qubits())), false);
+    //compressArr(arr, (2*pow(2.0,state.num_qubits())), false);
     
     
     
@@ -765,8 +836,8 @@ class SimulatorBasic final : public SimulatorBase {
         }
 
         fclose(test_file);
-    }
-    test_counter++;*/
+    }*/
+    test_counter++;
   }
 
   template <unsigned H>

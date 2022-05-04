@@ -18,6 +18,7 @@
 #include <complex>
 #include <limits>
 #include <string>
+#include <stdio.h>
 
 
 #include "../lib/circuit_qsim_parser.h"

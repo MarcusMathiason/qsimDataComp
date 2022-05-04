@@ -34,6 +34,7 @@
         "system_error": "cpp",
         "xhash": "cpp",
         "xmemory": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "limits": "cpp"
     }
 }
