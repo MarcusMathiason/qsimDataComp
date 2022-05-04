@@ -1,0 +1,873 @@
+desc: --massif-out-file=valgrind/vectorSizeRed1925
+cmd: ./test
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=5569765
+mem_heap_B=4705079
+mem_heap_extra_B=18121
+mem_stacks_B=0
+heap_tree=peak
+n6: 4705079 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 4194288 0x10C07E: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n1: 140448 0x122C74: qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::FuseGates(qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::Parameter const&, unsigned int, __gnu_cxx::__normal_iterator<qsim::Gate<float, qsim::GateKind> const*, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > > >, __gnu_cxx::__normal_iterator<qsim::Gate<float, qsim::GateKind> const*, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > > >, std::vector<unsigned int, std::allocator<unsigned int> > const&, bool) (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+  n1: 140448 0x10D31B: bool qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Run<qsim::Circuit<qsim::Gate<float, qsim::GateKind> > >(qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Parameter const&, main::Factory const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> > const&, qsim::VectorSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::SequentialFor, float>::Vector&, std::vector<qsim::StateSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::VectorSpace, qsim::SequentialFor, float>::MeasurementResult, std::allocator<qsim::StateSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::VectorSpace, qsim::SequentialFor, float>::MeasurementResult> >&) [clone .isra.0] [clone .constprop.0] (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+   n0: 140448 0x10C152: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n1: 122880 0x11D5B4: bool qsim::CircuitQsimParser<qsim::IOFile>::FromStream<std::basic_ifstream<char, std::char_traits<char> >, float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_ifstream<char, std::char_traits<char> >&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+  n0: 122880 0x10BF39: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n0: 117415 in 22 places, all below massif's threshold (1.00%)
+ n1: 72704 0x48F6A99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x4011B89: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x4011C90: call_init (dl-init.c:30)
+    n1: 72704 0x4011C90: _dl_init (dl-init.c:119)
+     n0: 72704 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+ n1: 57344 0x121878: qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::FuseGates(qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >::Parameter const&, unsigned int, __gnu_cxx::__normal_iterator<qsim::Gate<float, qsim::GateKind> const*, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > > >, __gnu_cxx::__normal_iterator<qsim::Gate<float, qsim::GateKind> const*, std::vector<qsim::Gate<float, qsim::GateKind>, std::allocator<qsim::Gate<float, qsim::GateKind> > > >, std::vector<unsigned int, std::allocator<unsigned int> > const&, bool) (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+  n1: 57344 0x10D31B: bool qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Run<qsim::Circuit<qsim::Gate<float, qsim::GateKind> > >(qsim::QSimRunner<qsim::IO, qsim::MultiQubitGateFuser<qsim::IO, qsim::Gate<float, qsim::GateKind> >, main::Factory, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >::Parameter const&, main::Factory const&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> > const&, qsim::VectorSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::SequentialFor, float>::Vector&, std::vector<qsim::StateSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::VectorSpace, qsim::SequentialFor, float>::MeasurementResult, std::allocator<qsim::StateSpace<qsim::StateSpaceBasic<qsim::SequentialFor, float>, qsim::VectorSpace, qsim::SequentialFor, float>::MeasurementResult> >&) [clone .isra.0] [clone .constprop.0] (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+   n0: 57344 0x10C152: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+#-----------
+snapshot=2
+#-----------
+time=1037114459
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=2303380408
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=3215451258
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=4505697716
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=5418276681
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=6476214707
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=7745740285
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=8744017682
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=10301211761
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=11413493094
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=12859459053
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=14497063890
+mem_heap_B=4478331
+mem_heap_extra_B=12797
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=15739349942
+mem_heap_B=4478263
+mem_heap_extra_B=12737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=16981636019
+mem_heap_B=4478371
+mem_heap_extra_B=12813
+mem_stacks_B=0
+heap_tree=detailed
+n4: 4478371 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 4194288 0x10C07E: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n1: 122880 0x11D5B4: bool qsim::CircuitQsimParser<qsim::IOFile>::FromStream<std::basic_ifstream<char, std::char_traits<char> >, float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_ifstream<char, std::char_traits<char> >&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+  n0: 122880 0x10BF39: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n0: 88499 in 35 places, all below massif's threshold (1.00%)
+ n1: 72704 0x48F6A99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x4011B89: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x4011C90: call_init (dl-init.c:30)
+    n1: 72704 0x4011C90: _dl_init (dl-init.c:119)
+     n0: 72704 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+#-----------
+snapshot=16
+#-----------
+time=17809829906
+mem_heap_B=4478331
+mem_heap_extra_B=12797
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=18638020606
+mem_heap_B=4478263
+mem_heap_extra_B=12737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=19880306683
+mem_heap_B=4478371
+mem_heap_extra_B=12813
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=20708497413
+mem_heap_B=4478423
+mem_heap_extra_B=12865
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=21950786622
+mem_heap_B=4478263
+mem_heap_extra_B=12737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=23193072699
+mem_heap_B=4478371
+mem_heap_extra_B=12813
+mem_stacks_B=0
+heap_tree=detailed
+n4: 4478371 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 4194288 0x10C07E: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n1: 122880 0x11D5B4: bool qsim::CircuitQsimParser<qsim::IOFile>::FromStream<std::basic_ifstream<char, std::char_traits<char> >, float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_ifstream<char, std::char_traits<char> >&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+  n0: 122880 0x10BF39: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n0: 88499 in 35 places, all below massif's threshold (1.00%)
+ n1: 72704 0x48F6A99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x4011B89: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x4011C90: call_init (dl-init.c:30)
+    n1: 72704 0x4011C90: _dl_init (dl-init.c:119)
+     n0: 72704 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+#-----------
+snapshot=22
+#-----------
+time=24435361878
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=25325187482
+mem_heap_B=4478263
+mem_heap_extra_B=12737
+mem_stacks_B=0
+heap_tree=detailed
+n4: 4478263 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 4194288 0x10C07E: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n1: 122880 0x11D5B4: bool qsim::CircuitQsimParser<qsim::IOFile>::FromStream<std::basic_ifstream<char, std::char_traits<char> >, float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_ifstream<char, std::char_traits<char> >&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+  n0: 122880 0x10BF39: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n0: 88391 in 35 places, all below massif's threshold (1.00%)
+ n1: 72704 0x48F6A99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x4011B89: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x4011C90: call_init (dl-init.c:30)
+    n1: 72704 0x4011C90: _dl_init (dl-init.c:119)
+     n0: 72704 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+#-----------
+snapshot=24
+#-----------
+time=26659925825
+mem_heap_B=4478371
+mem_heap_extra_B=12813
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=27994667270
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=29106949247
+mem_heap_B=4478263
+mem_heap_extra_B=12737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=30441687590
+mem_heap_B=4478371
+mem_heap_extra_B=12813
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=31998885468
+mem_heap_B=4478331
+mem_heap_extra_B=12797
+mem_stacks_B=0
+heap_tree=detailed
+n4: 4478331 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 4194288 0x10C07E: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n1: 122880 0x11D5B4: bool qsim::CircuitQsimParser<qsim::IOFile>::FromStream<std::basic_ifstream<char, std::char_traits<char> >, float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_ifstream<char, std::char_traits<char> >&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+  n0: 122880 0x10BF39: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n0: 88459 in 35 places, all below massif's threshold (1.00%)
+ n1: 72704 0x48F6A99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x4011B89: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x4011C90: call_init (dl-init.c:30)
+    n1: 72704 0x4011C90: _dl_init (dl-init.c:119)
+     n0: 72704 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+#-----------
+snapshot=29
+#-----------
+time=32888711012
+mem_heap_B=4478263
+mem_heap_extra_B=12737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=34223449355
+mem_heap_B=4478371
+mem_heap_extra_B=12813
+mem_stacks_B=0
+heap_tree=detailed
+n4: 4478371 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 4194288 0x10C07E: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n1: 122880 0x11D5B4: bool qsim::CircuitQsimParser<qsim::IOFile>::FromStream<std::basic_ifstream<char, std::char_traits<char> >, float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_ifstream<char, std::char_traits<char> >&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+  n0: 122880 0x10BF39: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n0: 88499 in 35 places, all below massif's threshold (1.00%)
+ n1: 72704 0x48F6A99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x4011B89: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x4011C90: call_init (dl-init.c:30)
+    n1: 72704 0x4011C90: _dl_init (dl-init.c:119)
+     n0: 72704 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+#-----------
+snapshot=31
+#-----------
+time=35558190800
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=36800490901
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=38042791002
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=38870991025
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=40113291126
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=41355591227
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=detailed
+n4: 4478435 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 4194288 0x10C07E: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n1: 122880 0x11D5B4: bool qsim::CircuitQsimParser<qsim::IOFile>::FromStream<std::basic_ifstream<char, std::char_traits<char> >, float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_ifstream<char, std::char_traits<char> >&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+  n0: 122880 0x10BF39: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n0: 88563 in 35 places, all below massif's threshold (1.00%)
+ n1: 72704 0x48F6A99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x4011B89: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x4011C90: call_init (dl-init.c:30)
+    n1: 72704 0x4011C90: _dl_init (dl-init.c:119)
+     n0: 72704 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+#-----------
+snapshot=37
+#-----------
+time=42597891328
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=43840191429
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=45082491530
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=45910691553
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=47152991654
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=48395291755
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=49637591856
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=detailed
+n4: 4478435 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 4194288 0x10C07E: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n1: 122880 0x11D5B4: bool qsim::CircuitQsimParser<qsim::IOFile>::FromStream<std::basic_ifstream<char, std::char_traits<char> >, float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_ifstream<char, std::char_traits<char> >&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+  n0: 122880 0x10BF39: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n0: 88563 in 35 places, all below massif's threshold (1.00%)
+ n1: 72704 0x48F6A99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x4011B89: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x4011C90: call_init (dl-init.c:30)
+    n1: 72704 0x4011C90: _dl_init (dl-init.c:119)
+     n0: 72704 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+#-----------
+snapshot=44
+#-----------
+time=50879891957
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=52122192058
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=52950392081
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=54192692182
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=55434992283
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=56263192306
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=57091383041
+mem_heap_B=4478263
+mem_heap_extra_B=12737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=57919573742
+mem_heap_B=4478263
+mem_heap_extra_B=12737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=58747764495
+mem_heap_B=4478451
+mem_heap_extra_B=12821
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=59575958322
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=detailed
+n4: 4478435 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 4194288 0x10C07E: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n1: 122880 0x11D5B4: bool qsim::CircuitQsimParser<qsim::IOFile>::FromStream<std::basic_ifstream<char, std::char_traits<char> >, float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_ifstream<char, std::char_traits<char> >&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+  n0: 122880 0x10BF39: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n0: 88563 in 35 places, all below massif's threshold (1.00%)
+ n1: 72704 0x48F6A99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x4011B89: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x4011C90: call_init (dl-init.c:30)
+    n1: 72704 0x4011C90: _dl_init (dl-init.c:119)
+     n0: 72704 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+#-----------
+snapshot=54
+#-----------
+time=60404149057
+mem_heap_B=4478263
+mem_heap_extra_B=12737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=61232339758
+mem_heap_B=4478263
+mem_heap_extra_B=12737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=62060530511
+mem_heap_B=4478451
+mem_heap_extra_B=12821
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=62888721213
+mem_heap_B=4478423
+mem_heap_extra_B=12865
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=63716914720
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=64545105480
+mem_heap_B=4478263
+mem_heap_extra_B=12737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=65373296192
+mem_heap_B=4478271
+mem_heap_extra_B=12753
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=66201486909
+mem_heap_B=4478451
+mem_heap_extra_B=12821
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=67029680736
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=67857871496
+mem_heap_B=4478263
+mem_heap_extra_B=12737
+mem_stacks_B=0
+heap_tree=detailed
+n4: 4478263 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 4194288 0x10C07E: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n1: 122880 0x11D5B4: bool qsim::CircuitQsimParser<qsim::IOFile>::FromStream<std::basic_ifstream<char, std::char_traits<char> >, float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_ifstream<char, std::char_traits<char> >&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+  n0: 122880 0x10BF39: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n0: 88391 in 35 places, all below massif's threshold (1.00%)
+ n1: 72704 0x48F6A99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x4011B89: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x4011C90: call_init (dl-init.c:30)
+    n1: 72704 0x4011C90: _dl_init (dl-init.c:119)
+     n0: 72704 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+#-----------
+snapshot=64
+#-----------
+time=68686062208
+mem_heap_B=4478271
+mem_heap_extra_B=12753
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=69514252925
+mem_heap_B=4478451
+mem_heap_extra_B=12821
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=70342446752
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=71170637487
+mem_heap_B=4478263
+mem_heap_extra_B=12737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=71998828188
+mem_heap_B=4478263
+mem_heap_extra_B=12737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=72827018941
+mem_heap_B=4478451
+mem_heap_extra_B=12821
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=73655212768
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=74483403503
+mem_heap_B=4478263
+mem_heap_extra_B=12737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=75311594204
+mem_heap_B=4478263
+mem_heap_extra_B=12737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=76139784957
+mem_heap_B=4478451
+mem_heap_extra_B=12821
+mem_stacks_B=0
+heap_tree=detailed
+n4: 4478451 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 4194288 0x10C07E: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n1: 122880 0x11D5B4: bool qsim::CircuitQsimParser<qsim::IOFile>::FromStream<std::basic_ifstream<char, std::char_traits<char> >, float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_ifstream<char, std::char_traits<char> >&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+  n0: 122880 0x10BF39: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n0: 88579 in 35 places, all below massif's threshold (1.00%)
+ n1: 72704 0x48F6A99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x4011B89: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x4011C90: call_init (dl-init.c:30)
+    n1: 72704 0x4011C90: _dl_init (dl-init.c:119)
+     n0: 72704 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+#-----------
+snapshot=74
+#-----------
+time=76967975659
+mem_heap_B=4478423
+mem_heap_extra_B=12865
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=77796169166
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=78624359926
+mem_heap_B=4478263
+mem_heap_extra_B=12737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=79452550638
+mem_heap_B=4478271
+mem_heap_extra_B=12753
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=80280741355
+mem_heap_B=4478451
+mem_heap_extra_B=12821
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=81108935182
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=80
+#-----------
+time=81937125942
+mem_heap_B=4478263
+mem_heap_extra_B=12737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=81
+#-----------
+time=82765316654
+mem_heap_B=4478271
+mem_heap_extra_B=12753
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=82
+#-----------
+time=83593507371
+mem_heap_B=4478451
+mem_heap_extra_B=12821
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=83
+#-----------
+time=84421701198
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=detailed
+n4: 4478435 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 4194288 0x10C07E: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n1: 122880 0x11D5B4: bool qsim::CircuitQsimParser<qsim::IOFile>::FromStream<std::basic_ifstream<char, std::char_traits<char> >, float>(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_ifstream<char, std::char_traits<char> >&, qsim::Circuit<qsim::Gate<float, qsim::GateKind> >&) (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+  n0: 122880 0x10BF39: main (in /mnt/c/Users/Marcus/Documents/Chalmers/Thesis/Qsim/qsimDataComp/apps/test)
+ n0: 88563 in 35 places, all below massif's threshold (1.00%)
+ n1: 72704 0x48F6A99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+  n1: 72704 0x4011B89: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x4011C90: call_init (dl-init.c:30)
+    n1: 72704 0x4011C90: _dl_init (dl-init.c:119)
+     n0: 72704 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+#-----------
+snapshot=84
+#-----------
+time=85249891933
+mem_heap_B=4478263
+mem_heap_extra_B=12737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=85
+#-----------
+time=86078082634
+mem_heap_B=4478263
+mem_heap_extra_B=12737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=86
+#-----------
+time=86906273387
+mem_heap_B=4478451
+mem_heap_extra_B=12821
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=87
+#-----------
+time=87734467214
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=88
+#-----------
+time=88562657949
+mem_heap_B=4478263
+mem_heap_extra_B=12737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=89
+#-----------
+time=89390848650
+mem_heap_B=4478263
+mem_heap_extra_B=12737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=90
+#-----------
+time=90219039403
+mem_heap_B=4478451
+mem_heap_extra_B=12821
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=91
+#-----------
+time=91047230105
+mem_heap_B=4478423
+mem_heap_extra_B=12865
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=92
+#-----------
+time=91875423612
+mem_heap_B=4478435
+mem_heap_extra_B=12853
+mem_stacks_B=0
+heap_tree=empty

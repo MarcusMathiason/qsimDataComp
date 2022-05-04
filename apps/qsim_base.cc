@@ -175,6 +175,36 @@ int main(int argc, char* argv[]) {
   param.seed = opt.seed;
   param.verbosity = opt.verbosity;
 
+  /*uint dims = 1;
+  zfp_type type = zfp_type_float;
+  zfp_field* field = zfp_field_1d(&state, type, (sizeof(float) * state_space.MinSize(circuit.num_qubits))-(pow(sizeof(float),2)));
+
+  float *buf = (float *)malloc(sizeof(zfp_type_size(field->type)) * field->nx);
+
+      zfp_field_set_pointer(field, buf);
+
+  zfp_stream* zfp = zfp_stream_open(NULL);
+
+  zfp_stream_set_rate(zfp, 0, type, dims, 0);
+  zfp_stream_set_precision(zfp, 0);
+  zfp_stream_set_accuracy(zfp, 0);
+
+  size_t bufsize = zfp_stream_maximum_size(zfp, field);
+  uchar* buffer = new uchar[bufsize];
+
+  bitstream* stream = stream_open(buffer, bufsize);
+  zfp_stream_set_bit_stream(zfp, stream);
+
+  zfp_write_header(zfp, field, ZFP_HEADER_FULL);
+
+  size_t size = zfp_compress(zfp, field);
+
+  zfp_stream_rewind(zfp);
+
+  zfp_read_header(zfp, field, ZFP_HEADER_FULL);
+
+  zfp_decompress(zfp, field);*/
+
   if (Runner::Run(param, Factory(opt.num_threads), circuit, state)) {
     PrintAmplitudes(circuit.num_qubits, state_space, state);
   }

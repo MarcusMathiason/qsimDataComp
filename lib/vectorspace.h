@@ -24,6 +24,8 @@
 #include <memory>
 #include <utility>
 
+static auto sizeTmp = 0;
+
 namespace qsim {
 
 namespace detail {
@@ -87,7 +89,8 @@ class VectorSpace {
   VectorSpace(ForArgs&&... args) : for_(args...) {}
 
   static Vector Create(unsigned num_qubits) {
-    auto size = sizeof(fp_type) * Impl::MinSize(num_qubits);
+    auto size = (sizeof(fp_type) * Impl::MinSize(num_qubits))-(pow(sizeof(fp_type),2));
+    sizeTmp = size;
     #ifdef _WIN32
       Pointer ptr{(fp_type*) _aligned_malloc(size, 64), &detail::free};
       return Vector{std::move(ptr), ptr.get() != nullptr ? num_qubits : 0};
