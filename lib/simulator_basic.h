@@ -765,53 +765,76 @@ class SimulatorBasic final : public SimulatorBase {
     //printf("Running...\n");
     printf("Test counter: %d\n", test_counter);
     std::ofstream myfile;
-    
+    std::string binPath = "statevectorDumps/";
+    binPath.append(std::to_string(state.num_qubits()));
+    binPath.append("/");
     if(test_counter == 0){
-      myfile.open("svDump.csv");
-      myfile <<"test_counter == 0";
+      myfile.open(binPath+"svDump0.bin");
+      //myfile <<"test_counter == 0";
       for(int c = 0; c < (2*pow(2.0,state.num_qubits())); c++){
         //printf("%f\n", *(state.get()+c));
-        if((c%10000)==0){
+        /*if(((c%10000)==0)&&(c!=0)){
           myfile << std::endl;
-        }
+        }*/
         myfile <<*(state.get()+c) << ";";
-        
+        myfile << std::endl;
       }
-      myfile << std::endl;
-      myfile << std::endl;
     }
     else if(test_counter == 10){
-      myfile.open("svDump.csv", std::ofstream::app);
-      myfile <<"test_counter == 10";
+      myfile.open(binPath+"svDump10.bin");
+      //myfile <<"test_counter == 10";
       for(int c = 0; c < (2*pow(2.0,state.num_qubits())); c++){
         //printf("%f\n", *(state.get()+c));
-        if((c%10000)==0){
+        /*if(((c%10000)==0)&&(c!=0)){
           myfile << std::endl;
-        }
+        }*/
         myfile <<*(state.get()+c) << ";";
-        
+        myfile << std::endl;
       }
-      myfile << std::endl;
-      myfile << std::endl;
     }
     else if(test_counter == 100){
-      myfile.open("svDump.csv", std::ofstream::app);
-      myfile <<"test_counter == 100";
+      myfile.open(binPath+"svDump100.bin");
+      //myfile <<"test_counter == 100";
       for(int c = 0; c < (2*pow(2.0,state.num_qubits())); c++){
         //printf("%f\n", *(state.get()+c));
-        if((c%10000)==0){
+        /*if(((c%10000)==0)&&(c!=0)){
           myfile << std::endl;
-        }
+        }*/
         myfile <<*(state.get()+c) << ";";
-        
+        myfile << std::endl;
       }
-      myfile << std::endl;
-      myfile << std::endl;
     }
 
-    if(test_counter>100){
-      myfile.close();
+    //Max iteration at 16 qubits
+    else if(test_counter == 119){
+      myfile.open(binPath+"svDump119.bin");
+      //myfile <<"test_counter == 100";
+      for(int c = 0; c < (2*pow(2.0,state.num_qubits())); c++){
+        //printf("%f\n", *(state.get()+c));
+        /*if(((c%10000)==0)&&(c!=0)){
+          myfile << std::endl;
+        }*/
+        myfile <<*(state.get()+c) << ";";
+        myfile << std::endl;
+      }
     }
+
+    else if(test_counter == (119+(8*(state.num_qubits()-16)))){
+      myfile.open(binPath+"svDump"+std::to_string(119+(8*(state.num_qubits()-16)))+".bin");
+      //myfile <<"test_counter == 100";
+      for(int c = 0; c < (2*pow(2.0,state.num_qubits())); c++){
+        //printf("%f\n", *(state.get()+c));
+        /*if(((c%10000)==0)&&(c!=0)){
+          myfile << std::endl;
+        }*/
+        myfile <<*(state.get()+c) << ";";
+        myfile << std::endl;
+      }
+    }
+
+    
+
+      myfile.close();
     
 
     for_.Run(size, f, matrix, ms, xss, state.get());
